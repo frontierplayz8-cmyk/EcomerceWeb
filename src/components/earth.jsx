@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 
 
 const Earth = forwardRef((props, ref) => {
-  const model = useGLTF("/EcomerceWeb/earth.glb");
+  const model = useGLTF("//earth.glb");
   const scene = useMemo(() => model.scene.clone(), [model.scene]);
   const localRef = useRef(null);
 

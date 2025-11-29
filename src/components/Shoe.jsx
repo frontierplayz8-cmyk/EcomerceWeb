@@ -2,7 +2,7 @@ import { useGLTF } from "@react-three/drei";
 import React, { forwardRef, useMemo } from "react";
 
 const Shoe = forwardRef((props, ref) => {
-  const model = useGLTF("/EcomerceWeb/shoe.glb");
+  const model = useGLTF("//shoe.glb");
   const scene = useMemo(() => model.scene.clone(), [model.scene]);
 
   return (
