@@ -1,0 +1,1 @@
+const e="/EcomerceWeb/assets/image1-CvMydlRz.webp",s="/EcomerceWeb/assets/image2-CCpZVdr6.webp",a="/EcomerceWeb/assets/image3-Bkxe9MHy.jpg",c="/EcomerceWeb/assets/image4-DCQdfLU4.webp",m="/EcomerceWeb/assets/image5-XB0JBWMk.jpeg";export{s as a,a as b,c,m as d,e as i};
