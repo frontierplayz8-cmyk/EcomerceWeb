@@ -7,9 +7,10 @@ import { dark } from "@clerk/themes";
 import { CartProvider } from "./components/Cartcontext.jsx";
 import { MenuProvider } from "./components/menu.jsx";
 
+const frontendApi = import.meta.env.VITE_CLERK_FRONTEND_API;
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 createRoot(document.getElementById("root")).render(
-  <ClerkProvider publishableKey={PUBLISHABLE_KEY} appearance={{ baseTheme: dark, }} >
+  <ClerkProvider frontendApi={frontendApi} publishableKey={PUBLISHABLE_KEY} appearance={{ baseTheme: dark, }} >
     <BrowserRouter basename="/">
       <MenuProvider>
         <CartProvider>
