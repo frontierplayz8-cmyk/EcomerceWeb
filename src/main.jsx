@@ -8,14 +8,8 @@ import { CartProvider } from "./components/Cartcontext.jsx";
 import { MenuProvider } from "./components/menu.jsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-console.log("CLERK KEY =", PUBLISHABLE_KEY);
 createRoot(document.getElementById("root")).render(
-  <ClerkProvider
-    publishableKey={PUBLISHABLE_KEY}
-    appearance={{
-      baseTheme: dark,
-    }}
-  >
+  <ClerkProvider frontendApi={PUBLISHABLE_KEY} navigate={(to) => window.history.pushState(null, '', to)} appearance={{ baseTheme: dark, }} >
     <BrowserRouter basename="/EcomerceWeb">
       <MenuProvider>
         <CartProvider>
