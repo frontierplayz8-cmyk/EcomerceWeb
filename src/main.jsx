@@ -16,7 +16,7 @@ createRoot(document.getElementById("root")).render(
       baseTheme: dark,
     }}
   >
-    <BrowserRouter>
+    <BrowserRouter basename="/EcomerceWeb">
       <MenuProvider>
         <CartProvider>
           <Ecommerce />
