@@ -31,6 +31,6 @@ const Earth = forwardRef((props, ref) => {
   return <primitive ref={setRefs} position={[11.3, 0, 0]} object={scene} {...props} />;
 });
 
-useGLTF.preload("./earth.glb")
+useGLTF.preload("/earth.glb")
 
 export default Earth;

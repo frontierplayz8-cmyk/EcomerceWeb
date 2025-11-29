@@ -9,7 +9,7 @@ import { MenuProvider } from "./components/menu.jsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 createRoot(document.getElementById("root")).render(
-  <ClerkProvider frontendApi={PUBLISHABLE_KEY} navigate={(to) => window.history.pushState(null, '', to)} appearance={{ baseTheme: dark, }} >
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY} navigate={(to) => window.history.pushState(null, '', to)} appearance={{ baseTheme: dark, }} >
     <BrowserRouter basename="/EcomerceWeb">
       <MenuProvider>
         <CartProvider>

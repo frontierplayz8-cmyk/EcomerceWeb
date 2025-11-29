@@ -301,6 +301,10 @@ main {
     animation: canvasSpin 0.9s linear infinite;
 }
 
+.canvas-loader p {
+    text-align: center;
+}
+
 @keyframes canvasSpin {
     from {
         transform: rotate(0deg);
