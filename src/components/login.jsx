@@ -1,6 +1,6 @@
-import { SignIn, useSignIn } from "@clerk/clerk-react";
+import { SignIn } from "@clerk/clerk-react";
 
-export default function CustomLogin() {
+export default function Login() {
   return (
   <div className="login">
     <SignIn path="/sign-in" routing="path" appearance={{ baseTheme: "dark" }} />

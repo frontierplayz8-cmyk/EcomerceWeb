@@ -10,7 +10,7 @@ import { MenuProvider } from "./components/menu.jsx";
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 createRoot(document.getElementById("root")).render(
   <ClerkProvider publishableKey={PUBLISHABLE_KEY} navigate={(to) => window.history.pushState(null, '', to)} appearance={{ baseTheme: dark, }} >
-    <BrowserRouter basename="/EcomerceWeb">
+    <BrowserRouter basename="/">
       <MenuProvider>
         <CartProvider>
           <Ecommerce />

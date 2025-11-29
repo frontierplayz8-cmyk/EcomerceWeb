@@ -5,5 +5,5 @@ import tailwindcss from '@tailwindcss/vite'
 // Automatically switch base depending on environment
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/EcomerceWeb/',
+  base: '/',
 })
