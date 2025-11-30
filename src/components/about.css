@@ -504,7 +504,22 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
+    .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .herotext h2 {
+        font-size: 32px;
+    }
+    .herotext p {
+        font-size: 18px;
+    }
+    .abouthero2 p {
+        font-size: 18px;
+    }
     .reputation-stats {
         grid-template-columns: 1fr;
     }

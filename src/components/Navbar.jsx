@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import { Form, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, ShoppingCart } from "lucide-react";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import Cart from "./cart";

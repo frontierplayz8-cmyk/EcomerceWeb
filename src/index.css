@@ -47,6 +47,7 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     height: 130px;
+    position: relative;
 }
 
 .logo img {
@@ -665,6 +666,9 @@ main {
     }
 }
 @media (max-width: 1024px) {
+    nav {
+        height: 100px;
+    }
     .hero-wrapper h1 {
         font-size: 45px;
     }
@@ -692,15 +696,16 @@ main {
     }
 }
 @media (max-width: 768px) {
-    .nav {
+    nav {
         justify-content: center;
         align-items: center;
         padding: 0 1.5rem;
         position: fixed;
-        z-index: 100000;
+        z-index: 100;
         width: 100%;
     }
     nav {
+        height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -745,7 +750,7 @@ main {
     .menu-bar {
         display: flex;
         position: absolute;
-        left: 3rem;
+        left: 2rem;
     }
     .hero-right {
         display: none;
@@ -798,6 +803,12 @@ main {
     .product-wrapper {
         width: 90%;
     }
+    .product-main {
+        height: max-content;
+    }
+    .product-h1 {
+        width: 100%;
+    }
 }
 @media (max-width: 550px) {
     .nav {
@@ -812,13 +823,24 @@ main {
     .logo img {
         height: 110px;
     }
-    .login-wrapper {
-        display: flex;
-    }
     .login2 {
-        display: none;
+        display: flex;
+        height: 30px;
+        width: 60px;
+        font-size: 12px;
+        border-radius: 10px;
+        margin-left: 0;
+    }
+    .product-main {
+        height:max-content;
+    }
+    .product-h1 {
+        width: 100%;
     }
 }
 .login-wrapper {
     display: none;
+}
+.login2 {
+    display: flex;
 }

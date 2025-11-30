@@ -1,5 +1,10 @@
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 import { Link } from "react-router-dom";
 
 const MenuContext = createContext(null);
@@ -30,19 +35,17 @@ export function MenuProvider({ children }) {
     open ? closeMenu() : openMenu(payload);
   }
 
+  // Escape closes menu
   useEffect(() => {
     function onKey(e) {
       if (e.key === "Escape") closeMenu();
-      if (e.key === "Tab" && open) e.preventDefault();
     }
     if (open) window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
   return (
-    <MenuContext.Provider
-      value={{ open, data, openMenu, closeMenu, toggleMenu }}
-    >
+    <MenuContext.Provider value={{ open, data, openMenu, closeMenu, toggleMenu }}>
       {children}
       <Menu />
     </MenuContext.Provider>
@@ -59,7 +62,7 @@ function Menu() {
     opacity: open ? 1 : 0,
     visibility: open ? "visible" : "hidden",
     transition: "opacity 200ms ease, visibility 200ms",
-    zIndex: 1000,
+    zIndex: 999, // LOWER so clerk popover shows above
   };
 
   const panelWidth = 420;
@@ -72,7 +75,7 @@ function Menu() {
     background: "#111",
     transform: open ? "translateX(0)" : `translateX(-${panelWidth}px)`,
     transition: "transform 250ms cubic-bezier(.2,.9,.2,1)",
-    zIndex: 100001,
+    zIndex: 1000,
     padding: "16px",
     display: "flex",
     flexDirection: "column",
@@ -82,53 +85,32 @@ function Menu() {
   return (
     <>
       <div style={overlayStyle} onClick={closeMenu} />
+
       <aside role="dialog" aria-hidden={!open} style={panelStyle}>
         <div
           className="menuhead"
-          style={{ display: "flex", justifyContent: "space-between" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 20,
+          }}
         >
-          <strong
-            style={{
-              fontSize: 32,
-            }}
-          >
-            Menu
-          </strong>
+          <strong style={{ fontSize: 32 }}>Menu</strong>
           <button onClick={closeMenu}>✕</button>
         </div>
 
-        <div style={{ overflow: "auto", flex: 1 }}>
+        <div style={{ overflowY: "auto", flex: 1 }}>
           {data ? (
             <pre style={{ fontSize: 13 }}>{JSON.stringify(data, null, 2)}</pre>
-          ) : (
-            <p></p>
-          )}
+          ) : null}
 
-          <nav style={{ marginTop: 20 }}>
-            <Link className="menu-side" to="/">
-              Home
-            </Link>
-            <Link className="menu-side" to="/products">
-              Products
-            </Link>
-            <Link className="menu-side" to="/about">
-              About
-            </Link>
-            <Link className="menu-side" to="/contact">
-              Contact
-            </Link>
+          <nav style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
+            <Link className="menu-side" to="/">Home</Link>
+            <Link className="menu-side" to="/products">Products</Link>
+            <Link className="menu-side" to="/about">About</Link>
+            <Link className="menu-side" to="/contact">Contact</Link>
           </nav>
-        </div>
-        <div className="login-wrapper">
-          <SignedIn>
-            <UserButton appearance={{ baseTheme: "dark" }} />
-          </SignedIn>
-
-          <SignedOut>
-            <Link to="/sign-in" className="login2">
-              Login
-            </Link>
-          </SignedOut>
         </div>
 
         <button onClick={closeMenu} style={{ marginTop: 12, width: "100%" }}>
