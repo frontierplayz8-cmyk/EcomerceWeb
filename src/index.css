@@ -852,8 +852,8 @@ main {
 .login2 {
     display: flex;
 }
-@media (max-width: 260px) {
+@media (max-width: 280px) {
     .product-h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 }
