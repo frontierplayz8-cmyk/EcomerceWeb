@@ -241,14 +241,15 @@ main {
 .hero2 {
     width: 100%;
     height: 100vh;
-    z-index: -1000;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .hero2-wrapper {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 49%;
     height: 160px;
@@ -855,5 +856,46 @@ main {
 @media (max-width: 280px) {
     .product-h1 {
         font-size: 32px;
+    }
+}
+@media (max-width: 390px){
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero p {
+        font-size: 20px;
+    }
+    .hero button {
+        width: 126px;
+        font-size: 20px;
+        height: 43px;
+        border-radius: 10px;
+    }
+    .hero-left {
+        height: 80vh;
+    }
+    .hero2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero2 h1 {
+        margin-top: 0;
+        font-size: 23px;
+    }
+    .productcardmain img {
+        width: 334px;
+        margin-top: -30px;
+    }
+    .productcardmain p {
+        padding-left: 10px;
+        width: 93%;
+    }
+    .lowercard {
+        margin-bottom: -30px;
+        width: 93%;
+    }
+    .protitle {
+        width: 93%;
     }
 }
