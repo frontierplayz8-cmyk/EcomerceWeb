@@ -839,7 +839,7 @@ main {
     }
 }
 @media (max-width: 310px) {
-    .logo {
+    .logo img {
         margin-left: -20px;
     }
     .product-h1 {
