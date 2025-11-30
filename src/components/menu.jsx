@@ -1,6 +1,6 @@
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Login from "./login";
 
 const MenuContext = createContext(null);
 
@@ -83,10 +83,17 @@ function Menu() {
     <>
       <div style={overlayStyle} onClick={closeMenu} />
       <aside role="dialog" aria-hidden={!open} style={panelStyle}>
-        <div className="menuhead" style={{ display: "flex", justifyContent: "space-between" }}>
-          <strong style={{
-            fontSize: 32,
-          }}>Menu</strong>
+        <div
+          className="menuhead"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <strong
+            style={{
+              fontSize: 32,
+            }}
+          >
+            Menu
+          </strong>
           <button onClick={closeMenu}>✕</button>
         </div>
 
@@ -113,7 +120,15 @@ function Menu() {
           </nav>
         </div>
         <div className="login-wrapper">
-          <Login />
+          <SignedIn>
+            <UserButton appearance={{ baseTheme: "dark" }} />
+          </SignedIn>
+
+          <SignedOut>
+            <Link to="/sign-in" className="login2">
+              Login
+            </Link>
+          </SignedOut>
         </div>
 
         <button onClick={closeMenu} style={{ marginTop: 12, width: "100%" }}>

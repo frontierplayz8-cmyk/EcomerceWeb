@@ -812,7 +812,13 @@ main {
     .logo img {
         height: 110px;
     }
+    .login-wrapper {
+        display: flex;
+    }
+    .login2 {
+        display: none;
+    }
 }
-.login {
-    display: ;
+.login-wrapper {
+    display: none;
 }
