@@ -21,7 +21,7 @@ const Navbar = () => {
   <div className="nav flex items-center justify-between px-6 h-20 shadow-md bg-white">
       <div className="logo">
         <Link to="/">
-          <img src={logo} alt="logo" className="h-14" />
+          <img src={logo} alt="logo" className="navimage" />
         </Link>
       </div>
 
@@ -32,7 +32,7 @@ const Navbar = () => {
         <Link className="menu-tag" to="/contact">Contact</Link>
       </div>
       <div className="menu-bar">
-        <Menu size={42} color="black" strokeWidth={2.5} onClick={() => toggleMenu()}/>
+        <Menu size={32} color="black" strokeWidth={2.5} onClick={() => toggleMenu()}/>
       </div>
     <div className="nav-right flex items-center gap-5">
         <ShoppingCart

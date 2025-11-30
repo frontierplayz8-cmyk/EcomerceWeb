@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Login from "./login";
 
 const MenuContext = createContext(null);
 
@@ -110,6 +111,9 @@ function Menu() {
               Contact
             </Link>
           </nav>
+        </div>
+        <div className="login-wrapper">
+          <Login />
         </div>
 
         <button onClick={closeMenu} style={{ marginTop: 12, width: "100%" }}>
