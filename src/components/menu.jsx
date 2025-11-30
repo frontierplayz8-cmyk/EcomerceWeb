@@ -65,7 +65,7 @@ function Menu() {
     zIndex: 999, // LOWER so clerk popover shows above
   };
 
-  const panelWidth = 420;
+  const panelWidth = 370;
   const panelStyle = {
     position: "fixed",
     top: 0,
@@ -105,7 +105,7 @@ function Menu() {
             <pre style={{ fontSize: 13 }}>{JSON.stringify(data, null, 2)}</pre>
           ) : null}
 
-          <nav style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
+          <nav style={{ marginTop: 100, display: "flex", flexDirection: "column", gap: 10 }}>
             <Link className="menu-side" to="/">Home</Link>
             <Link className="menu-side" to="/products">Products</Link>
             <Link className="menu-side" to="/about">About</Link>
