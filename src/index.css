@@ -853,7 +853,6 @@ main {
 .login2 {
     display: flex;
 }
-<<<<<<< HEAD
 @media (max-width: 280px) {
     .product-h1 {
         font-size: 32px;
@@ -898,10 +897,5 @@ main {
     }
     .protitle {
         width: 93%;
-=======
-@media (max-width: 256px) {
-    .product-h1 {
-        font-size: 32px;
->>>>>>> 3b9b41dc0a716d3874c76e87e3620e42132d1d2d
     }
 }
