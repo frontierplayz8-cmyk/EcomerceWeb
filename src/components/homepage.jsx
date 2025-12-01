@@ -51,7 +51,7 @@ const Homepage = () => {
       });
     });
     const mm2 = gsap.matchMedia();
-    mm2.add("(min-width: 391px)", () => {
+    mm2.add("(min-width: 1367px)", () => {
       return gsap.to(".hero-right", {
         x: -900,
         y: 900,
@@ -65,7 +65,7 @@ const Homepage = () => {
     });
 
     const mm3 = gsap.matchMedia();
-    mm3.add("(min-width: 1367px)", () => {
+    mm3.add("(min-width: 391px)", () => {
       return detailTimeline.from(split.lines, {
         y: 25,
         opacity: 0,
