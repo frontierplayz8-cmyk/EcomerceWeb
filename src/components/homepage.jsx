@@ -38,10 +38,9 @@ const Homepage = () => {
         anticipatePin: 1,
       }
     })
-    
+
     return () => {
       heroTimeline.kill();
-      detailTimeline.kill();
       split.revert();
       ScrollTrigger.getAll().forEach((instance) => instance.kill());
     };
