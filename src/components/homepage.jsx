@@ -57,7 +57,6 @@ const Homepage = () => {
           stagger: { amount: 0.4, from: "bottom right" },
           ease: "power3.out",
         },
-        "<"
       );
     return () => {
       heroTimeline.kill();
