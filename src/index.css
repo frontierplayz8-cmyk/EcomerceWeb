@@ -931,5 +931,8 @@ main {
     .product-h1 {
         margin-bottom: 50px;
     }
+    .cl-avatarimage {
+        height: 50px;
+        width: 50px;
+    }
 }
-
