@@ -654,6 +654,10 @@ main {
     display: none;
 }
 @media (max-width: 1440px) {
+    .hero2-wrapper {
+        width: 48%;
+        margin-right: 30px;
+    }
     .hero-wrapper h1 {
         font-size: 50px;
     }
@@ -665,6 +669,9 @@ main {
         align-items: center;
         justify-content: flex-start;
         width: 100%;
+    }
+    .hero3 {
+        height: 130vh;
     }
 }
 @media (max-width: 1024px) {

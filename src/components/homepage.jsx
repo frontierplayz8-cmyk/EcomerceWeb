@@ -11,7 +11,6 @@ import { SplitText } from "gsap/SplitText";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
 
-
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Homepage = () => {
@@ -27,17 +26,6 @@ const Homepage = () => {
         anticipatePin: 1,
       },
     });
-    gsap.to(".hero-right",{
-      x:-900,
-      y:900,
-      scrollTrigger: {
-        trigger: ".hero",
-        scrub:1.5,
-        start: "top top",
-        end: "center center",
-        anticipatePin: 1,
-      }
-    })
     const split = new SplitText(".hero2-wrapper p", { type: "lines" });
 
     const detailTimeline = gsap.timeline({
@@ -48,16 +36,41 @@ const Homepage = () => {
       },
     });
 
-    detailTimeline
-      .from(
-        split.lines,
-        {
-          y: 25,
-          opacity: 0,
-          stagger: { amount: 0.4, from: "bottom right" },
-          ease: "power3.out",
-        },
-      );
+    const mm = gsap.matchMedia();
+
+    mm.add("(max-width: 1366px)", () => {
+        return gsap.to(".hero-right", {
+          x: -600,
+          y: 700,
+          scrollTrigger: {
+            trigger: ".hero",
+            scrub: 1.5,
+            start: "top top",
+            end: "center center",
+          },
+        });
+      },
+    );
+    const mm2 = gsap.matchMedia()
+    mm2.add("(min-width: 1367px)", () => {
+        return gsap.to(".hero-right", {
+          x: -900,
+          y: 900,
+          scrollTrigger: {
+            trigger: ".hero",
+            scrub: 1.5,
+            start: "top top",
+            end: "center center",
+          },
+        });
+      })
+
+    detailTimeline.from(split.lines, {
+      y: 25,
+      opacity: 0,
+      stagger: { amount: 0.4, from: "bottom right" },
+      ease: "power3.out",
+    });
     return () => {
       heroTimeline.kill();
       detailTimeline.kill();
@@ -102,10 +115,10 @@ const Homepage = () => {
               <h1>The Future of Footwear</h1>
               <p>Style That Speaks. Comfort That Performs.</p>
               <div className="homepage-button">
-            <Link to="/products">
-              <button className="button">Shop Now</button>
-            </Link>
-            </div>
+                <Link to="/products">
+                  <button className="button">Shop Now</button>
+                </Link>
+              </div>
             </div>
           </div>
           <div className="hero-right">
@@ -134,17 +147,17 @@ const Homepage = () => {
           <div className="hero2-wrapper">
             <h1>Ultra-Comfort Running Shoe</h1>
             <p>
-              Experience unmatched comfort and style with our latest running shoe.
-              Featuring a lightweight breathable mesh upper, flexible sole, and modern
-              design, it&apos;s perfect for daily runs or casual wear. Step into performance
-              and elevate your every stride.
+              Experience unmatched comfort and style with our latest running
+              shoe. Featuring a lightweight breathable mesh upper, flexible
+              sole, and modern design, it&apos;s perfect for daily runs or
+              casual wear. Step into performance and elevate your every stride.
             </p>
           </div>
         </div>
         <div className="hero3">
           <ImageSlider />
-         </div>
-         <Footer />
+        </div>
+        <Footer />
       </main>
     </>
   );
