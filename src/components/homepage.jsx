@@ -38,9 +38,30 @@ const Homepage = () => {
         anticipatePin: 1,
       }
     })
+    const split = new SplitText(".hero2-wrapper p", { type: "lines" });
 
+    const detailTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero2-wrapper",
+        start: "top 80%",
+        anticipatePin: 1,
+      },
+    });
+
+    detailTimeline
+      .from(
+        split.lines,
+        {
+          y: 25,
+          opacity: 0,
+          stagger: { amount: 0.4, from: "bottom right" },
+          ease: "power3.out",
+        },
+        "<"
+      );
     return () => {
       heroTimeline.kill();
+      detailTimeline.kill();
       split.revert();
       ScrollTrigger.getAll().forEach((instance) => instance.kill());
     };
