@@ -10,8 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
-import Login from "./login";
-import Register from "./register";
+
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -25,6 +24,7 @@ const Homepage = () => {
         start: "top center",
         end: "bottom top",
         scrub: 1,
+        anticipatePin: 1,
       },
     });
     gsap.to(".hero-right",{
@@ -34,25 +34,27 @@ const Homepage = () => {
         trigger: ".hero",
         scrub:1.5,
         start: "top top",
-        end: "center center"
+        end: "center center",
+        anticipatePin: 1,
       }
     })
-    const split = new SplitText(".hero2-wrapper p", { type: "chars" });
+    const split = new SplitText(".hero2-wrapper p", { type: "lines" });
 
     const detailTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero2-wrapper",
         start: "top 80%",
+        anticipatePin: 1,
       },
     });
 
     detailTimeline
       .from(
-        split.chars,
+        split.lines,
         {
           y: 100,
           opacity: 0,
-          stagger: { amount: 0.4, from: "random" },
+          stagger: { amount: 0.4, from: "bottom right" },
           ease: "power3.out",
         },
         "<"
@@ -76,6 +78,7 @@ const Homepage = () => {
             scrub: 1.5,
             start: "top center",
             end: "bottom center",
+            anticipatePin: 1,
           },
         })
         .to(shoeRef.current.rotation, {

@@ -76,9 +76,9 @@ const About = () => {
                 At Mercer, we merge global inspiration with eco-conscious
                 innovation to shape the footwear of tomorrow.
               </p>
-              <Link to="/products">
-                <button className="aboutherobtn">View Collection</button>
-              </Link>
+                <Link className="aboutherobtn1" to="/products">
+                  <button style={{marginTop: 0}} className="aboutherobtn">View Collection</button>
+                </Link>
             </div>
           </div>
         </div>

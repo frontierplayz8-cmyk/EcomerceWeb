@@ -180,7 +180,7 @@ main {
 .hero-wrapper h1 {
     font-size: 80px;
     font-family: Arial, Helvetica, sans-serif;
-    -webkit-text-stroke: 1px #111;
+    -webkit-text-stroke: 1px #744646;
     width: 100%;
     display: flex;
     align-items: center;
@@ -243,7 +243,7 @@ main {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .hero2-wrapper {
@@ -254,6 +254,7 @@ main {
     width: 49%;
     height: 160px;
     padding-right: 30px;
+    margin-right: 100px;
 }
 
 .hero2-wrapper h1 {
@@ -897,5 +898,8 @@ main {
     }
     .protitle {
         width: 93%;
+    }
+    .navimage {
+        margin-right: 60px;
     }
 }
