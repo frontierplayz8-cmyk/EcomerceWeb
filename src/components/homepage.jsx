@@ -39,37 +39,39 @@ const Homepage = () => {
     const mm = gsap.matchMedia();
 
     mm.add("(max-width: 1366px)", () => {
-        return gsap.to(".hero-right", {
-          x: -600,
-          y: 700,
-          scrollTrigger: {
-            trigger: ".hero",
-            scrub: 1.5,
-            start: "top top",
-            end: "center center",
-          },
-        });
-      },
-    );
-    const mm2 = gsap.matchMedia()
-    mm2.add("(min-width: 1367px)", () => {
-        return gsap.to(".hero-right", {
-          x: -900,
-          y: 900,
-          scrollTrigger: {
-            trigger: ".hero",
-            scrub: 1.5,
-            start: "top top",
-            end: "center center",
-          },
-        });
-      })
+      return gsap.to(".hero-right", {
+        x: -600,
+        y: 700,
+        scrollTrigger: {
+          trigger: ".hero",
+          scrub: 1.5,
+          start: "top top",
+          end: "center center",
+        },
+      });
+    });
+    const mm2 = gsap.matchMedia();
+    mm2.add("(min-width: 391px)", () => {
+      return gsap.to(".hero-right", {
+        x: -900,
+        y: 900,
+        scrollTrigger: {
+          trigger: ".hero",
+          scrub: 1.5,
+          start: "top top",
+          end: "center center",
+        },
+      });
+    });
 
-    detailTimeline.from(split.lines, {
-      y: 25,
-      opacity: 0,
-      stagger: { amount: 0.4, from: "bottom right" },
-      ease: "power3.out",
+    const mm3 = gsap.matchMedia();
+    mm3.add("(min-width: 1367px)", () => {
+      return detailTimeline.from(split.lines, {
+        y: 25,
+        opacity: 0,
+        stagger: { amount: 0.4, from: "bottom right" },
+        ease: "power3.out",
+      });
     });
     return () => {
       heroTimeline.kill();
