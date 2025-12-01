@@ -11,7 +11,7 @@ import image5 from "../assets/image5.jpeg";
 const showcaseSlides = [
   {
     id: 1,
-    title: "AeroFlex MeshRunner V1",
+    title: "AeroFlex Runner V1",
     subtitle: "Breathable Comfort • Responsive Cushioning • All-Terrain Grip",
     description: "Experience lightweight comfort with AeroFlex MeshRunner V1 — a breathable mesh sneaker designed for all-day cushioning, responsive support, and strong traction on every stride.",
     color: "#FEEFEA",
@@ -19,7 +19,7 @@ const showcaseSlides = [
   },
   {
     id: 2,
-    title: "StridePulse 2",
+    title: "Stride Pulse 2",
     subtitle: "Stability • Road Ready",
     description:
       "Dual-density foam absorbs impact so you can push tempo runs without punishing your knees.",
